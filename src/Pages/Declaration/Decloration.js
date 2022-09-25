@@ -6,6 +6,12 @@ import ava from './img/Afshin.png'
 import React from 'react'
 import {useLocation} from "react-router-dom";
 import DateObject from "react-date-object";
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    Link
+  } from "react-router-dom";
 
 function Decaloration(){
 
@@ -21,7 +27,6 @@ function Decaloration(){
         fetch(`https://6317f2c8f6b281877c5feabe.mockapi.io/boards/${id}`)
         .then((res)=>res.json())
         .then((res)=>setData(res))
-        .then((res)=>console.log(data))
      
         
 
@@ -29,7 +34,7 @@ function Decaloration(){
 
 
     return(
-      <div onClick={()=>console.log(data)}>
+      <div >
     {data?
     <>
     {date=data.createdAd}
@@ -102,9 +107,13 @@ function Decaloration(){
              <h3 className='text-black'>{"+"+data.phone}</h3>
            
          </div>
+
+         <Link to={'/Message'} state={data} >
          <p className='mt-7 p-5 bg-blue-600 text-white pl-11 rounded-lg'>
          написать продавцу
          </p >
+         </Link>
+        
          <p className='mt-7 p-5 bg-blue-600 text-white pl-11 rounded-lg'>
              Забронировать Звонок
          </p>

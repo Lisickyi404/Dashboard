@@ -31,6 +31,7 @@ function App() {
     <div className="App">
       <div className='wrapper container max-w-screen-xl mx-auto'>
         <Header/>
+        <div className='pt-20 z-10'>
         <Routes>
           <Route path='/' element={<Homepage/>} />
           <Route path='/login' element={<LoginPage/>} />
@@ -40,6 +41,8 @@ function App() {
           <Route path={'/Shops'} element={<ShopPage/>}/>
           <Route path={`/Decaloration/:id`} element={<Decaloration/>}/>
         </Routes>
+        </div>
+     
 
         
       

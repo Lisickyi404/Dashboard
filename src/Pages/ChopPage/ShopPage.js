@@ -33,7 +33,7 @@ function ShopPage(){
                                 <span className="py-6 px-9 bg-blue-700 rounded-lg text-white cursor-pointer">
                                 Написать
                                 </span>
-                            </div>
+                            </div>  
                             <MiniListItems/>
                             <p className="text-white mx-auto w-fit mt-7 px-8 py-5 bg-black rounded-b-full rounded-t-full cursor-pointer">Cмотреть больше</p>
                         </div>
