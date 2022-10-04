@@ -33,9 +33,7 @@ function Header(){
 
         <div>
         <span>Обновления</span>
-            <Link to={`/login`}>
-            <span className='cursor-pointer ml-3'>Логин</span>
-            </Link>
+          
             <Link to={`/Shops`}>
             <span className='cursor-pointer ml-3'>Магазины</span>
             </Link>
@@ -44,9 +42,12 @@ function Header(){
         </div>
         {Object.keys(account).length === 0 ? 
         <div>
-           <p className=' bg-blue-600 text-white px-2 py-1 my-auto w-fit h-fit rounded-lg' >
+            <Link to={`/login`}>
+            <p className=' bg-blue-600 text-white px-2 py-1 my-auto w-fit h-fit rounded-lg' >
          Войти
          </p >
+            </Link>
+         
         </div> :
         
         <div className='flex'>
@@ -59,10 +60,10 @@ function Header(){
             <img className='cursor-pointer'  src={Notif}  width={58} height={58}></img>
 
 
-            <div className='flex ml-12'>
-<img src={Ava}></img>
+            <div className='flex ml-12 items-center'>
+<img src={account.picture.thumbnail} className="w-14 h-14 rounded-full"></img>
 <Link to={`/Posting`}>
-<span>Выставить объявление</span>
+<span className=' bg-blue-600 text-white px-2 py-1 my-auto w-fit h-fit rounded-lg'  onClick={()=>console.log(account)}>Выставить объявление</span>
 </Link>
 </div>
             </div>

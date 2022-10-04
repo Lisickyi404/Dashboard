@@ -59,8 +59,10 @@ function MiniListItems({id}){
              <MdChevronLeft className="left-0 right-auto absolute cursor-pointer" size={60} onClick={sliderLeft}/> 
           <div id={`slider`} ref={ref} className="w-full flex overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide" onScroll={HorizontalScroll}>
           {listItems.map((ob,i)=>(
-                <div className="mx-4">
+           
+                <div className="mx-4"  key={i}>
                      <Item
+                     
                  id={ob.id}
                  key={i}
                  title={ob.title}

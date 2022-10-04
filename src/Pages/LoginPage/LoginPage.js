@@ -2,7 +2,7 @@ import React from "react";
 import { setData } from "../../Redux/Account";
 import { useDispatch, useSelector } from 'react-redux';
 
-function LoginPage(){
+function LoginPage({setShowModalLogin}){
 
     const [form,setForm] = React.useState({
         login:'',
@@ -10,6 +10,10 @@ function LoginPage(){
     })
     const account=useSelector(state=>state.account.accountsData)
     const dispatch = useDispatch()
+
+    React.useEffect(()=>{
+      console.log(document)
+    })
 
     const handleChange = (event) => {
         setForm({
@@ -24,15 +28,17 @@ function LoginPage(){
         fetch(`https://6317f2c8f6b281877c5feabe.mockapi.io/1/${1}`)
         .then((res)=>res.json())
         .then((res)=>dispatch(setData(res)))
-
+        .then(()=>(setShowModalLogin(false)))
+     /*    .then(()=>hiddenLogin(false)) */
         
         event.preventDefault();
        /*  console.log(form)
         alert(form.login + ' ' + form.password); */
       };
+   /*    className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8" */
     return(
-        <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-md space-y-8">
+        
+        <div className="w-fit max-w-md mx-auto bg-white z-999 p-3 bg-orange-100 rounded-md fixed">
           <div>
             <img
               className="mx-auto h-12 w-auto"
@@ -108,7 +114,7 @@ function LoginPage(){
             </div>
           </form>
         </div>
-      </div>
+      
     )
 }
 

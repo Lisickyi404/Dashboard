@@ -6,17 +6,29 @@ import ava from './img/Afshin.png'
 import React from 'react'
 import {useLocation} from "react-router-dom";
 import DateObject from "react-date-object";
+import LoginPage from '../LoginPage/LoginPage'
 import {
     BrowserRouter,
     Routes,
     Route,
     Link
   } from "react-router-dom";
+  import axios from 'axios'
+  import { setData } from '../../Redux/Account'
+  import { useSelector, useDispatch } from 'react-redux'
+
+
 
 function Decaloration(){
 
+    
+    const account = useSelector(state=>state.account.accountsData)
+    const dispatch = useDispatch()
+
     const [data,setData]=React.useState(null)
     const [time,setTime] = React.useState(null)
+    const [showModalLogin,setShowModalLogin] = React.useState(false)
+
     let location=useLocation()
     var date = new DateObject("2020 8 21 11 55 36 100 am");
     date=date.format("format", "MM/DD/YYYY")
@@ -32,9 +44,23 @@ function Decaloration(){
 
     },[])
 
+    
+    const SetLike= (data) =>{
+        
+        if(Object.keys(account).length===0){
+            setShowModalLogin(true)
+        }
+      
+        /*  axios.put(`https://6317f2c8f6b281877c5feabe.mockapi.io/boards/${data.id}`,data)
+        .then((res)=>console.log(res))  */
+        
+    }
+
 
     return(
       <div >
+
+        {showModalLogin ? <LoginPage setShowModalLogin={setShowModalLogin}/>:null}
     {data?
     <>
     {date=data.createdAd}
@@ -57,14 +83,20 @@ function Decaloration(){
      </ul>
  </div>
 
- <div className='my-5'>
-     <p>
+ <div className='my-5 flex justify-between'>
+
+    <div>
+    <p>
      {data.title}
      </p>
      <p>
  
      {data.location.postcode + ', '+ data.location.city  + ', '+data.location.country}
      </p>
+    </div>
+    
+    <button className='px-4 py-1 border-solid border-2 border-gray-400 rounded-full ' onClick={()=>SetLike()}>Добавить в избранное</button>
+
  </div>
 
  <div className='flex'>
@@ -109,7 +141,7 @@ function Decaloration(){
          </div>
 
          <Link to={'/Message'} state={data} >
-         <p className='mt-7 p-5 bg-blue-600 text-white pl-11 rounded-lg'>
+         <p className='mt-7 p-5 bg-blue-600 text-white pl-11 rounded-lg' >
          написать продавцу
          </p >
          </Link>

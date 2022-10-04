@@ -1,0 +1,12 @@
+.overlay{
+    @apply min-h-screen w-screen fixed;
+
+    .modal{
+        @apply w-96 mx-auto bg-white;
+    }
+    .jopa{
+        color:greenyellow;
+        font-size: 59px;
+    }
+}
+
