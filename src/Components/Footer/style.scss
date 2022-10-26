@@ -1,0 +1,37 @@
+
+
+.Footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #F4F5F6;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .left_logo {
+        .Logo{
+            display: flex;
+            align-items: center;
+        }
+        
+    }
+
+    .menu_list{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        .link{
+            margin: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 100%;
+            color: rgba(35, 38, 47, 0.5);
+        }
+
+        .active{
+            color: black;
+            font-weight: 700;
+            font-size: 20px;
+        }
+    }
+}

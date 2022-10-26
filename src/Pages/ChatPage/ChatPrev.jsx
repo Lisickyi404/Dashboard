@@ -2,7 +2,7 @@ import Ava from './Afshin.png'
 
 function CharPrev(){
     return(
-        <div className='flex py-6 w-full cursor-pointer z-10'>
+        <div className='flex py-6 w-full cursor-pointer z-10 hover:bg-blue-100 p-1 '>
 
         <img className='w-12 h-12' src={Ava} /> 
         

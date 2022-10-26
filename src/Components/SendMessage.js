@@ -1,6 +1,6 @@
 import Ava from './Header/img/Profile.png'
 
-function SendMessage({text,creator}){
+function SendMessage({text,creator,id}){
   if(creator=='vasya'){
    return(
       <div className="my-6 w-fit ml-auto mr-0">

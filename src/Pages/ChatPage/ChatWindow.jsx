@@ -43,7 +43,7 @@ function ChatWindow(){
 
     return(
         <>
-          <div className="w-3/6 h-5/6 fixed inset-x-1/3  pl-10 " >
+          <div className="w-full h-5/6 inset-x-1/3  ml-20 border-l-2 px-2" >
             <div className="flex justify-between  items-center py-4">
                 <div className="flex">
                     <img src={Ava}/>
@@ -63,27 +63,19 @@ function ChatWindow(){
 
             </div>
 
-            <div className="h-full overflow-y-scroll scroll scroll-smooth scrollbar-hide" >
+            <di v className="h-full overflow-y-scroll scroll scroll-smooth scrollbar-hide" >
 
                 {chat.map((ob,i)=>
-           
+    
                 <SendMessage
                 text={ob.text}
                 creator={ob.creator}
                 
                 />
-               
-                   
+
                 )}
                 
 
-                <div className=" my-6 w-fit ml-auto mr-0">
-                    <p className="py-4 px-6 w-fit bg-blue-800 text-white rounded-l-3xl rounded-br-3xl rounded-tr">Described by Queenstown House & Garden magazine </p>
-                </div>
-
-                <div className="my-6 w-fit ml-auto mr-0">
-                    <p className="py-4 px-6 w-fit bg-blue-800 text-white rounded-l-3xl rounded-br-3xl rounded-tr">Described by Queenstown House & Garden magazine </p>
-                </div>
 
                 <div className="my-6 w-fit ml-auto mr-0">
                     <p className="py-4 px-6 w-fit bg-blue-800 text-white rounded-l-3xl rounded-br-3xl rounded-tr">Described by Queenstown House & Garden magazine </p>
@@ -101,12 +93,12 @@ function ChatWindow(){
                     <p className="  py-4 px-6 rounded-r-3xl rounded-bl-3xl rounded-lr bg-slate-300">Described by Queenstown House & Garden magazine as having 'one of the best views we've ever seen' you </p>
                 </div>
 
-            </div>
+            </di>
 
             <div className="w-full fixed bottom-0 py-7 z-50 bg-white top-auto">
-                    <div className="">
-                    <input className="w-2/4 text-2xl whitespace-normal h-fit" ref={ref}/>
-                <p onClick={()=>sendMyMessage(ref.current.value)} className="bg-stone-400 w-fit px-4 py-2 rounded-full">Отправить</p>
+                    <div className="flex">
+                    <input className="w-2/4 text-2xl whitespace-normal h-fit border-2 h-16" ref={ref}/>
+                <p onClick={()=>{sendMyMessage(ref.current.value);ref.current.value=''}} className="bg-stone-400 w-fit px-4 py-2 rounded-full">Отправить</p>
                     </div>
               
 

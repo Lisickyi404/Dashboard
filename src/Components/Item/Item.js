@@ -1,14 +1,54 @@
 import ItemImg from './img/Item.png'
 import LocImg from './img/Location.svg'
-import Ava from './img/Afshin.png'
 import { Link } from 'react-router-dom'
 import DateObject from "react-date-object";
+import React, { useRef } from 'react';
+import {BsBookmark} from 'react-icons/bs'
+import {FcBookmark} from 'react-icons/fc'
+import { useDispatch, useSelector } from 'react-redux';
+import {setLikes,deleteLikes} from '../../Redux/likes'
+
+import './style.scss'
 
 function Item(props){
+
+    const [like, setLike] = React.useState(true)
+    const ref = useRef()
+
+    const dispatch = useDispatch()
+    
+    const likeItem = (e) =>{
+        e.stopPropagation() 
+        e.preventDefault();
+        if (like){
+            dispatch(setLikes(props))
+        } else {
+
+            dispatch(deleteLikes(props))
+
+        }
+        setLike(!like)
+        
+    }
+
     let date = new DateObject(props.time)
     return(
-        <Link to={`/Decaloration/${props.id}`}>
-         <div className='Item p-3 w-72 cursor-pointer rounded-lg border-2'>
+        <Link to={`/Decaloration/${props.id}`} ref={ref}>
+         <div className='item' >
+{
+    like ?
+    <div className='likes' onClick={(e)=>likeItem(e)}>
+    <BsBookmark size={30}/>
+ 
+</div> :
+
+<div className='likes' onClick={(e)=>likeItem(e)}>
+    <FcBookmark  size={30}/>
+
+</div> 
+
+}
+
 
 <img className='' src={ItemImg} width={278} height={278}></img>
 <span className='text-xl'>{props.title}</span>
@@ -18,7 +58,7 @@ function Item(props){
 </div>
 <h3 className='text-2xl py-4'>${props.price}</h3>
 
-<div className='flex justify-between '>
+<div className='flex justify-between items-center '>
     <div className='flex w-28'>
     <img className='rounded-full h-14' src={props.avatar} ></img>
     
@@ -33,11 +73,11 @@ function Item(props){
     </div>
     </div>
 
-    <div className='public'>
+    <div className='public w-fit'>
         <span className='text-sm text-slate-500 font-normal'>
         Опубликовано
         </span>
-        <h4>{date.format("dddd DD MMMM")}</h4>
+        <h4 className='w-32'>{date.format("dddd DD MMMM")}</h4>
     </div>
 </div>
 

@@ -22,7 +22,7 @@ function ChatPage(){
 
     return(
         <>
-        <div  className="flex w-full h-screen overflow-y-hidden container fixed"  >
+        <div  className="flex w-full h-screen overflow-y-hidden container justify-between mx-auto"  >
           <div className="w-1/4 h-4/6 relative overflow-y-scroll scroll scroll-smooth scrollbar-hide pt-10">
           <p className="text-5xl w-fit mx-auto">Сообщения <h className="text-gray-400">(12)</h></p>
             <p className="mx-auto w-fit">Здесь находятся все ваши переписки</p>
@@ -52,7 +52,7 @@ function ChatPage(){
 
         
           
-      <ChatWindow/>
+      <ChatWindow className='w-4/5'/>
         </div>
         </>
     )

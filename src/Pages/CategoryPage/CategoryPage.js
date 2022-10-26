@@ -10,6 +10,7 @@ import { useNavigate, useLocation,useParams } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
 
+import NavigationMenu from "../../Components/NavigationMenu/NavigationMenu";
 
 function CateogryPage(){
 
@@ -46,22 +47,8 @@ function CateogryPage(){
       
 
     return(
-        <div className="mt-12" onClick={()=>console.log(items)}>
-            <div className="flex justify-between">
-                <span>Вернуться к объявлениям</span>
-                
-                <ul className="flex">
-                    <li>
-                        Главная>
-                    </li>
-                    <li>
-                        объявления>
-                    </li>
-                    <li>
-                        Недвижимость
-                    </li>
-                </ul>
-            </div>
+        <div className="mt-12">
+           <NavigationMenu category={categoriesOnPage.title}/>
 
             <div className="h-96">
             <img src={bgImg} className=' z-0 absolute'></img>
@@ -100,13 +87,14 @@ function CateogryPage(){
          {items.map((ob,i)=>(
                 <Item
                 id={ob.id}
-                key={i}
+                key={ob.id}
                 title={ob.title}
                 price={ob.price}
                 avatar={ob.avatar}
                 creator={ob.creatorName}
                 time={ob.createdAt}
                 location={ob.location}
+                category={categoriesOnPage.title}
 
                
                 />

@@ -1,0 +1,21 @@
+.item{
+    /*   @apply p-3 w-72 cursor-pointer rounded-lg border-2 relative; */
+    padding: 12px;
+    width: 288px;
+    cursor: pointer;
+    border-radius: 8px;
+    position: relative;
+    border: 2px solid gray;
+
+    .likes{
+        position:absolute;
+        right: 20px;
+        top:20px;
+        padding: 12px;
+        background-color: white;
+        border-radius: 100%;
+        }
+
+    
+
+}

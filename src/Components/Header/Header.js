@@ -21,8 +21,8 @@ function Header(){
     const dispatch = useDispatch()
 
     return(
-        <div className="Header border-b-2 fixed bg-white z-20 w-full">
-        <div className='flex justify-between  items-center w-9/12  ' >
+        <div className="Header border-b-2 fixed bg-white z-20 w-screen">
+        <div className='flex justify-between  items-center w-9/12 mx-auto  ' >
         <Link to={`/`}>
         <div className='flex items-center'>
             <img src={Logo} width={48} height={48}></img>

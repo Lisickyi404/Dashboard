@@ -1,0 +1,23 @@
+.creator_info{
+    
+    width: 336px;
+        
+        background: #F4F5F6;
+        border-radius: 8px;
+    
+        
+        
+}
+
+.button_connect{
+@apply mt-7 bg-blue-600 text-white  rounded-lg;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 24px 32px;
+gap: 8px;
+
+width: 304px;
+height: 58px;
+}

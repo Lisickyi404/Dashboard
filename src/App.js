@@ -8,6 +8,7 @@ import ChatPage from './Pages/ChatPage/ChatPage';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import PostingPage from './Pages/PostingPage/PostingPage';
 import ShopPage from './Pages/ChopPage/ShopPage';
+import Footer from './Components/Footer/Footer';
 /*---------------------------------------------------------------------------------------*/ 
 import React from 'react';
 import {
@@ -29,8 +30,9 @@ function App() {
 
   return (
     <div className="App">
+       <Header/>
       <div className='wrapper container max-w-screen-xl mx-auto'>
-        <Header/>
+       
         <div className='pt-20 z-10'>
         <Routes>
           <Route path='/' element={<Homepage/>} />
@@ -47,7 +49,7 @@ function App() {
         
       
       </div>
-    
+      <Footer/>
     </div>
   );
 }
