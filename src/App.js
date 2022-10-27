@@ -36,7 +36,7 @@ function App() {
         <div className='pt-20 z-10'>
         <Routes>
           <Route path='/' element={<Homepage/>} />
-          <Route path='/login' element={<LoginPage/>} />
+         
           <Route path={`/theme/*`}element={<CateogryPage/>} />
           <Route path={'/Message'} element={<ChatPage/>}/>
           <Route path={'/Posting'} element={<PostingPage/>}/>
