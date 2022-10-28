@@ -13,7 +13,7 @@ export const likesSlice = createSlice({
             
     },
     deleteLikes:(state,action)=>{
-        state.likes.filter(el=>el.id!==action.payload.id)
+        state.likes = state.likes.filter(el=>el.id!==action.payload.id)
     }
 
 }})

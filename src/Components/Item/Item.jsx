@@ -11,9 +11,15 @@ import {setLikes,deleteLikes} from '../../Redux/likes'
 import './style.scss'
 
 function Item(props){
-
+    const state = useSelector(state=>state.likes.likes)
     const [like, setLike] = React.useState(true)
     const ref = useRef()
+
+    React.useEffect(()=>{
+        setLike(!(state.find(el=>el.id==props.id)))
+    })
+
+    
 
     const dispatch = useDispatch()
     

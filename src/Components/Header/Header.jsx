@@ -65,7 +65,9 @@ function Header(){
             <img className='cursor-pointer' src={Chat} width={58} height={58}/>
                 </Link>
          
+            <Link to={'/Likes'}>
             <img className='cursor-pointer' src={Save}  width={58} height={58}/>
+            </Link>
             <Notif/>
      
             <div className='flex ml-12 items-center'>
